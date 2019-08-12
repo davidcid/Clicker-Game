@@ -1,0 +1,14 @@
+#cookie {
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  
+  .features {
+    width: 150px;
+    border: 1px solid red;
+    cursor: pointer;
+    padding: 8px;
+  }
