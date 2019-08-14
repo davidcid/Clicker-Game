@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
     <title>Cookie Clicker</title>
 </head>
 
 <body>
 
-    <button onClick="clickCookie()" id="cookie"></button>
-    <p id="cps">Cookies per second: 0.0</p>
-    
-    <h1 id="num-cookies">0</h1>
-    
-    <div onclick="addCursor()" id="cursor" class="features">
-        <h3 id="cursors-number">Add cursor (0)</h3>
-        <p id="cursors-cost">5 cookies</p>
+    <div id="game-container">
+        <section id="cookie-section">
+            <div onClick="clickCookie()" id="cookie">
+                <img src="./img/cookie.png" alt="cookie-img">
+            </div>
+            <p id="cps">Cookies per second: 0.0</p>
+            <h1 id="num-cookies">0 cookies</h1>
+        </section>
+        
+        <section id="features-section">
+            <div onclick="addFeature(cursors)" id="cursor" class="features">
+                <h3 id="cursors-number">Cursor (0)</h3>
+                <p id="cursors-cost">5 cookies</p>
+            </div>
+            <div onclick="addFeature(grandmas)" id="grandma" class="features">
+                <h3 id="grandmas-number">Grandma (0)</h3>
+                <p id="grandmas-cost">25 cookies</p>
+            </div>
+            <div onclick="addFeature(farms)" id="farm" class="features">
+                <h3 id="farms-number">Farm (0)</h3>
+                <p id="farms-cost">100 cookies</p>
+            </div>
+        </section>    
     </div>
+    
+    
         
 
     <script type="text/javascript" src="script.js"></script>
