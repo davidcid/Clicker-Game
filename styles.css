@@ -31,8 +31,18 @@ body, * {
 
 #cookie img {
     width: 100%;
-    border: 1px dashed red;
     margin-bottom: -60px;
+    transition: 0.4s;
+    transition-timing-function: cubic-bezier(0.28, 2.02, 0.62, -0.3)
+  }
+
+  #cookie img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  #cookie img:active {
+    transform: scale(1);
   }
   
 .features {
@@ -41,4 +51,23 @@ body, * {
   padding: 8px;
   display: flex;
   justify-content: space-between;
+  height: 75px;
+}
+
+.feature-icon {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.feature-left {
+  display: flex;
+}
+
+.num-features {
+  color: rgb(124, 124, 124);
+  font-size: 40px;
+}
+
+.icon-cost {
+  height: 25px;
 }

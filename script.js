@@ -17,6 +17,12 @@ const minesNumber = document.querySelector("#num-mines");
 const factoriesCost = document.querySelector("#factories-cost");
 const factoriesNumber = document.querySelector("#num-factories");
 
+const banksCost = document.querySelector("#banks-cost");
+const banksNumber = document.querySelector("#num-banks");
+
+const templesCost = document.querySelector("#temples-cost");
+const templesNumber = document.querySelector("#num-temples");
+
 
 
 let numCookies = 0;
@@ -55,6 +61,21 @@ const factories = {
   costSelector: factoriesCost,
   number: 0,
   numberSelector: factoriesNumber,
+  increment: 0.08
+}
+const banks = {
+  cost: 3000,
+  costSelector: banksCost,
+  number: 0,
+  numberSelector: banksNumber,
+  increment: 0.08
+}
+
+const temples = {
+  cost: 8000,
+  costSelector: templesCost,
+  number: 0,
+  numberSelector: templesNumber,
   increment: 0.08
 }
 
