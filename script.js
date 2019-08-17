@@ -29,32 +29,36 @@ let numCookies = 0;
 let cookiesPerSecond = 0;
 
 const cursors = {
-  cost: 5,
+  cost: 15,
   costSelector: cursorsCost,
   number: 0,
   numberSelector: cursorsNumber,
-  increment: 0.08,
+  increment: 0.1,
+  inflation: 0.15
 }
 const grandmas = {
-  cost: 25,
+  cost: 100,
   costSelector:  grandmasCost,
   number: 0,
   numberSelector: grandmasNumber,
-  increment: 0.08
+  increment: 1,
+  inflation: 0.15
 }
 const farms = {
-  cost: 100,
+  cost: 1100,
   costSelector: farmsCost,
   number: 0,
   numberSelector: farmsNumber,
-  increment: 0.08
+  increment: 8,
+  inflation: 0.15
 }
 const mines = {
-  cost: 500,
+  cost: 12000,
   costSelector: minesCost,
   number: 0,
   numberSelector: minesNumber,
-  increment: 0.08
+  increment: 47,
+  inflation: 0.15
 }
 const factories = {
   cost: 1000,
@@ -81,7 +85,7 @@ const temples = {
 
 function clickCookie() {
   numCookies += 1;
-  numCookiesDiv.innerHTML = numCookies.toFixed(1) + ' cookies';
+  numCookiesDiv.innerHTML = numCookies.toFixed(0) + ' cookies';
 }
 
 function addFeature(feature) {
@@ -89,8 +93,8 @@ function addFeature(feature) {
     numCookies -= feature.cost;
     cookiesPerSecond += feature.increment;
     feature.number += 1;
-    feature.cost = feature.cost * (1 + feature.increment);
-    feature.costSelector.innerHTML = `${feature.cost.toFixed(1)} cookies`;
+    feature.cost = feature.cost * (1 + feature.inflation);
+    feature.costSelector.innerHTML = `🍪 ${feature.cost.toFixed(0)}`;
     feature.numberSelector.innerHTML = `${feature.number}`;
   }
   else {
@@ -100,8 +104,8 @@ function addFeature(feature) {
 
 function addCookies() {
   numCookies += cookiesPerSecond;
-  numCookiesDiv.innerHTML = numCookies.toFixed(1) + ' cookies';
-  cps.innerHTML = `cookies per second: ${cookiesPerSecond.toFixed(2)}`;
+  numCookiesDiv.innerHTML = numCookies.toFixed(0) + ' cookies';
+  cps.innerHTML = `cookies per second: ${cookiesPerSecond.toFixed(1)}`;
 }
 
 setInterval(addCookies,1000);
