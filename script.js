@@ -25,7 +25,7 @@ const templesNumber = document.querySelector("#num-temples");
 
 
 
-let numCookies = 0;
+let numCookies = 130000;
 let cookiesPerSecond = 0;
 
 const cursors = {
@@ -61,26 +61,29 @@ const mines = {
   inflation: 0.15
 }
 const factories = {
-  cost: 1000,
+  cost: 130000,
   costSelector: factoriesCost,
   number: 0,
   numberSelector: factoriesNumber,
-  increment: 0.08
+  increment: 260,
+  inflation: 0.15
 }
 const banks = {
-  cost: 3000,
+  cost: 1400000,
   costSelector: banksCost,
   number: 0,
   numberSelector: banksNumber,
-  increment: 0.08
+  increment: 2300,
+  inflation: 0.15
 }
 
 const temples = {
-  cost: 8000,
+  cost: 20000000,
   costSelector: templesCost,
   number: 0,
   numberSelector: templesNumber,
-  increment: 0.08
+  increment: 25000,
+  inflation: 0.15
 }
 
 function clickCookie() {
@@ -103,9 +106,9 @@ function addFeature(feature) {
 }
 
 function addCookies() {
-  numCookies += cookiesPerSecond;
+  numCookies += cookiesPerSecond / 100;
   numCookiesDiv.innerHTML = numCookies.toFixed(0) + ' cookies';
   cps.innerHTML = `cookies per second: ${cookiesPerSecond.toFixed(1)}`;
 }
 
-setInterval(addCookies,1000);
+setInterval(addCookies,10);
